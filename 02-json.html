@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+<body>
+<h1>JSON</h1>
+<ul x-data="{
+    tableau:[
+    {prenom : 'Jules',nom'Houbron',age: 19},
+    {prenom : 'Eric',nom'Houbron',age: 50},
+    {prenom : 'Ziva',nom'Houbron',age: 12},],}">
+<template x-for="obj in tableau">
+<li>
+    <span x-text="obj.prenom">prenom</span>
+    <span x-text="obj.nom">nom</span>
+    <span x-text="obj.age">age</span>
+</li>
+</template>
+</ul>
+<ul x-data="{
+    async tableauJSON() {
+        const tabJSON = await fetch('main.json');
+        return await tabJSON.json();
+    }
+    
+    }">
+    <li>Tableau JSON</li>
+    <template x-for="obj in tableauJSON">
+        <li>
+            <span x-text="obj.prenom">prenom</span>
+            <span x-text="obj.nom">nom</span>
+            <span x-text="obj.age">age</span>
+        </li>
+    </template>
+  </ul>
+</body>
+</html>
