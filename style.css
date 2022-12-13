@@ -9,7 +9,7 @@
         background-color: rgba(0,0,0,0.9);
         cursor: pointer;
         display: grid;
-        margin: auto;
+        align-items: center;
         
     }
     .overlay::after {
@@ -18,20 +18,24 @@
         background-color: black;
         font-family: sans-serif;
         text-align: center;
-        line-height: 100%;
+        height: auto;
         display: block;
         position: absolute;
         top: 1rem;
         right: 1rem;
         width: 2rem;
         height: 2rem;
-        border: solid, 10px, white ;
-        border-radius: 20px;
+        border: 2px white solid;
+        border-radius: 20%;
+        display: grid;
+        align-content: center;
     }
     .overlay>figure {
         margin: 0;
         padding: 1rem;
-        border: 2px, white, solid;
+        border: 2px white solid;
+        display: flex;
+        margin: auto;
     }
     .overlay>figure>img {
         max-width: 100%;
